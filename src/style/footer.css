@@ -1,0 +1,16 @@
+.music-player-container{
+    border: 2px solid red;
+    height: 30px;
+    width: 65px;
+    margin: 10px;
+    display: flex;
+    justify-content: space-between;
+    text-align: center;
+}
+
+.icon{
+   border: 1px solid black;
+   width: 25px;
+   height: 25px;
+   border-radius: 50%;
+}

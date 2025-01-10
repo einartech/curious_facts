@@ -1,16 +1,43 @@
+@font-face {
+  font-family: "Retro Gaming";
+  src: url("./src/fonts/Retro Gaming.ttf");
+}
+
+@font-face {
+  font-family: "DIEDIEDIE";
+  src: url("./src/fonts/DIEDIEDIE.ttf");
+}
+
+.game-font{font-family: Retro Gaming;}
+.tama-font{font-family: DIEDIEDIE;}
+
+body {
+  background-color: lavender;
+  min-height: 100dvh;
+  margin: 0 auto;
+  width: 100%;
+}
+
 header {
   width: 100%;
   height: 15%;
-  border: 2px solid blue;
+  background-color: #fde344;
+  text-align: center;
 }
 main {
   width: 100%;
   height: 75%;
   border: 2px solid green;
+  display: flex;
+  align-items: center;
 }
 
 footer {
   width: 100%;
   height: 10%;
-  border: 2px solid red;
+  background-color: #fde344;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }

@@ -1,0 +1,16 @@
+.image-container{
+    margin: auto;
+    border: 1px solid pink;
+    width: 50%;
+    height: 45em;
+    display: flex;
+}
+
+.fact-container{
+    margin: auto;
+    border: 1px solid red;
+}
+
+#random-fact{
+    font-size: 18px;
+}
