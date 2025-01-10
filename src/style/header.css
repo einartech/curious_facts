@@ -1,8 +1,10 @@
 h1{
     font-size: 48pt;
-    margin: auto;
+    /* margin: auto; */
 }
 
 #game-info{
-    align-items: right;
+    float: right;
+    margin-right: 10px;
+    margin-top: 10px;
 }

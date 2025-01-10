@@ -2,13 +2,27 @@
     margin: auto;
     border: 1px solid pink;
     width: 50%;
-    height: 45em;
+    /* display: flex; */
+}
+
+img{
     display: flex;
+    justify-self: center;
 }
 
 .fact-container{
-    margin: auto;
+    display: flex;
+    justify-self: center;
     border: 1px solid red;
+}
+
+.icon-container{
+    height: 35px;
+    width: 85px;
+    border: 1px solid blue;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
 }
 
 #random-fact{
