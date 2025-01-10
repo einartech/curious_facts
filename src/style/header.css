@@ -1,3 +1,8 @@
 h1{
     font-size: 48pt;
+    margin: auto;
+}
+
+#game-info{
+    align-items: right;
 }

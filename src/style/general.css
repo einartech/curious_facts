@@ -11,22 +11,32 @@
 .game-font{font-family: Retro Gaming;}
 .tama-font{font-family: DIEDIEDIE;}
 
+html {
+  margin: 0px;
+  height: 100%;
+  width: 100%;
+}
+
 body {
   background-color: lavender;
-  min-height: 100dvh;
+  /* min-height: 100dvh; */
+  height: 100%;
   margin: 0 auto;
   width: 100%;
 }
 
 header {
+  margin-top: 10px;
   width: 100%;
   height: 15%;
   background-color: #fde344;
   text-align: center;
+  justify-content: center;
 }
+
 main {
   width: 100%;
-  height: 75%;
+  height: auto;
   border: 2px solid green;
   display: flex;
   align-items: center;
@@ -40,4 +50,12 @@ footer {
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  margin-bottom: 10px;
+}
+
+.icon{
+  border: 1px solid black;
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
 }
