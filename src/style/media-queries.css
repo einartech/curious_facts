@@ -1,8 +1,15 @@
 @media only screen and (max-width: 450px) {
     header {
       width: 90%;
-      border-radius: 20%;
+      border-radius: 10%;
       align-items: center;
-      margin: auto;
+    }
+
+    footer{
+      background-color: transparent;
+    }
+
+    h1{
+      font-size: 30pt;
     }
   }
