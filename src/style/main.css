@@ -1,4 +1,4 @@
-.image-container{
+.image-container {
     margin: auto;
     width: 50%;
     height: 100%;
@@ -23,7 +23,7 @@ img{
     height: 100%;
 }
 
-.fact-container{
+.fact-container {
     display: flex;
     grid-column: 2 / 4;
     grid-row: 3 / 5;
@@ -31,7 +31,7 @@ img{
     justify-self: center;
 }
 
-.icon-container{
+.icon-container {
     height: 35px;
     width: 150px;
     grid-column: 2 / 4;
