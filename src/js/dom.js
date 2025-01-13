@@ -26,6 +26,34 @@ musicOff.addEventListener("click", () => {
     clickSoundOff.play(); // Reproduce el sonido del botón
 });
 
+// Selecciona los botones
+const newFactButton = document.getElementById('newFact');
+const savedFactsButton = document.getElementById('savedFacts');
+const likeFactButton = document.getElementById('likeFact');
+
+// Función para reproducir sonido desde un elemento de audio en el HTML
+function playSound(audioId) {
+  const audioElement = document.getElementById(audioId);
+  if (audioElement) {
+    audioElement.currentTime = 0; // Reinicia el audio
+    audioElement.play();
+  }
+}
+
+//Eventos clack ratón botones principales
+newFactButton.addEventListener('click', () => {
+  playSound('newFactSound');
+});
+
+savedFactsButton.addEventListener('click', () => {
+  playSound('savedFactsSound');
+});
+
+likeFactButton.addEventListener('click', () => {
+  playSound('likeFactSound');
+});
+
+
 function showRandomText(apiRandomText) {
   console.log("showRandomText () >> OUTPUT >>");
   console.table(apiRandomText);
