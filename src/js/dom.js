@@ -25,3 +25,10 @@ musicOff.addEventListener("click", () => {
     }
     clickSoundOff.play(); // Reproduce el sonido del botón
 });
+
+function showRandomText(apiRandomText) {
+  console.log("showRandomText () >> OUTPUT >>");
+  console.table(apiRandomText);
+}
+
+export { showRandomText };
