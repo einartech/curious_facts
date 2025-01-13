@@ -11,6 +11,10 @@
 .game-font{font-family: Retro Gaming;}
 .tama-font{font-family: DIEDIEDIE;}
 
+*{
+  margin: 0;
+}
+
 html {
   margin: 0px;
   height: 100%;
