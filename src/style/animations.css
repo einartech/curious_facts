@@ -1,0 +1,39 @@
+.tama-icon{
+    position: absolute;
+    width: 80px;
+    height: 80px;
+    animation: wiggle 5s infinite;
+    z-index: -1;
+}
+
+#tama-heart{
+    margin-left: 10%;
+    margin-top: 20%;
+}
+
+#tama-normal{
+    margin-left: 80%;
+    margin-top: 35%;
+}
+
+#tama-smile{
+    margin-left: 20%;
+    margin-top: 45%;
+}
+
+.tama-icon:hover{
+    animation: expand 1s 1;
+}
+
+@keyframes wiggle{
+    0%{transform: rotate(15deg);}
+    50%{transform:  rotate(-15deg);}
+    100%{transform: rotate(15deg);}
+}
+
+@keyframes expand{
+    0%{width: 80px; height: 80px;}
+    50%{width: 120px; height: 120px;}
+    100%{width: 80px; height: 80px;}
+}
+ 
