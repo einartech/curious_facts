@@ -5,28 +5,25 @@ const backgroundMusic = document.getElementById("background-music");
 const clickSoundOn = document.getElementById("click-sound-on");
 const clickSoundOff = document.getElementById("click-sound-off");
 
-// Listeners
-document.addEventListener("DOMContentLoaded", showRandomText); //Llamar a la funcion showRandomText cada vez que el evento cargar pagina se ejecute
-
-// Inicializar estado de la música
+// Inicializar música
 let isMusicPlaying = false;
 
 // Función para poner música
 musicOn.addEventListener("click", () => {
-  if (!isMusicPlaying) {
-    backgroundMusic.play(); // Inicia la música
-    isMusicPlaying = true;
-  }
-  clickSoundOn.play(); // Reproduce el sonido del botón
+    if (!isMusicPlaying) {
+        backgroundMusic.play(); // Inicia la música
+        isMusicPlaying = true;
+    }
+    clickSoundOn.play(); // Reproduce el sonido del botón
 });
 
 // Función quitar música
 musicOff.addEventListener("click", () => {
-  if (isMusicPlaying) {
-    backgroundMusic.pause(); // Pausar música
-    isMusicPlaying = false;
-  }
-  clickSoundOff.play(); // Reproduce el sonido del botón
+    if (isMusicPlaying) {
+        backgroundMusic.pause(); // Pausar música
+        isMusicPlaying = false;
+    }
+    clickSoundOff.play(); // Reproduce el sonido del botón
 });
 
 // Selecciona los botones
@@ -43,7 +40,7 @@ function playSound(audioId) {
   }
 }
 
-//Eventos clack ratón botones principales
+//Eventos click ratón botones
 newFactButton.addEventListener('click', () => {
   playSound('newFactSound');
 });
@@ -58,8 +55,11 @@ likeFactButton.addEventListener('click', () => {
 
 
 function showRandomText(apiRandomText) {
-  let getRandomText = document.querySelector("#random-fact"); //Traer la sección de HTML con id random-fact
-  getRandomText.textContent = apiRandomText; //Reasignar el valor de la variable getRandomText con los datos que provienen de la api
+  console.log("showRandomText () >> OUTPUT >>");
+  console.table(apiRandomText);
+  let getRandomFactText = document.querySelector("#random-fact");
+  getRandomFactText.textContent=apiRandomText;
+  console.log(getRandomFactText);
 }
 
 export { showRandomText };
