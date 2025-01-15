@@ -1,17 +1,17 @@
 import { showRandomText } from "./dom.js";
+// !! ERROR - POR ALGUN MOTIVO NO SE PUEDE ACCEDER A ESTE ARCHIVO
 
 async function getRandomFacts() {
+  console.log("asodaiopsdjoasd");
   const url = "https://uselessfacts.jsph.pl/api/v2/facts/random";
-
   try {
     const response = await fetch(url);
-
     if (!response.ok) {
       throw new Error(`Response status: ${response.status}`);
     }
 
     const json = await response.json();
-    // console.table(json);
+    console.table(json);
 
     let curiousFactRandomId = json.id;
     let curiousFactRandomText = json.text;
@@ -26,4 +26,9 @@ async function getRandomFacts() {
   }
 }
 
+function saludo() {
+  console.log("HOLA PERRAAA");
+}
+
 getRandomFacts();
+saludo();

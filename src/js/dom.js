@@ -27,9 +27,9 @@ musicOff.addEventListener("click", () => {
 });
 
 // Selecciona los botones
-const newFactButton = document.getElementById('newFact');
-const savedFactsButton = document.getElementById('savedFacts');
-const likeFactButton = document.getElementById('likeFact');
+const newFactButton = document.getElementById("newFact");
+const savedFactsButton = document.getElementById("savedFacts");
+const likeFactButton = document.getElementById("likeFact");
 
 // Función para reproducir sonido desde un elemento de audio en el HTML
 function playSound(audioId) {
@@ -45,14 +45,13 @@ newFactButton.addEventListener('click', () => {
   playSound('newFactSound');
 });
 
-savedFactsButton.addEventListener('click', () => {
-  playSound('savedFactsSound');
+savedFactsButton.addEventListener("click", () => {
+  playSound("savedFactsSound");
 });
 
-likeFactButton.addEventListener('click', () => {
-  playSound('likeFactSound');
+likeFactButton.addEventListener("click", () => {
+  playSound("likeFactSound");
 });
-
 
 function showRandomText(apiRandomText) {
   console.log("showRandomText () >> OUTPUT >>");
