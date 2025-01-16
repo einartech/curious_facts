@@ -21,4 +21,8 @@
     .icon-container{
       grid-row: 5 / 7;
     }
+
+    .tama-icon{
+      display: none;
+    }
   }
