@@ -2,7 +2,6 @@ import { showRandomText } from "./dom.js";
 // !! ERROR - POR ALGUN MOTIVO NO SE PUEDE ACCEDER A ESTE ARCHIVO
 
 async function getRandomFacts() {
-  console.log("asodaiopsdjoasd");
   const url = "https://uselessfacts.jsph.pl/api/v2/facts/random";
   try {
     const response = await fetch(url);
@@ -25,10 +24,4 @@ async function getRandomFacts() {
     console.error(error.message);
   }
 }
-
-function saludo() {
-  console.log("HOLA PERRAAA");
-}
-
-getRandomFacts();
-saludo();
+export { getRandomFacts };

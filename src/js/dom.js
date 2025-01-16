@@ -1,29 +1,33 @@
+import { getRandomFacts } from "./api.js";
+
+//Parameters
+let apiRandomText = "";
+
 // Elementos
 const musicOn = document.getElementById("music-on");
 const musicOff = document.getElementById("music-off");
 const backgroundMusic = document.getElementById("background-music");
 const clickSoundOn = document.getElementById("click-sound-on");
 const clickSoundOff = document.getElementById("click-sound-off");
-
 // Inicializar música
 let isMusicPlaying = false;
 
 // Función para poner música
 musicOn.addEventListener("click", () => {
-    if (!isMusicPlaying) {
-        backgroundMusic.play(); // Inicia la música
-        isMusicPlaying = true;
-    }
-    clickSoundOn.play(); // Reproduce el sonido del botón
+  if (!isMusicPlaying) {
+    backgroundMusic.play(); // Inicia la música
+    isMusicPlaying = true;
+  }
+  clickSoundOn.play(); // Reproduce el sonido del botón
 });
 
 // Función quitar música
 musicOff.addEventListener("click", () => {
-    if (isMusicPlaying) {
-        backgroundMusic.pause(); // Pausar música
-        isMusicPlaying = false;
-    }
-    clickSoundOff.play(); // Reproduce el sonido del botón
+  if (isMusicPlaying) {
+    backgroundMusic.pause(); // Pausar música
+    isMusicPlaying = false;
+  }
+  clickSoundOff.play(); // Reproduce el sonido del botón
 });
 
 // Selecciona los botones
@@ -41,23 +45,25 @@ function playSound(audioId) {
 }
 
 //Eventos click ratón botones
-newFactButton.addEventListener('click', () => {
-  playSound('newFactSound');
-});
+// newFactButton.addEventListener("click", () => {
+//   playSound("newFactSound");
+// });
 
-savedFactsButton.addEventListener("click", () => {
-  playSound("savedFactsSound");
-});
+// savedFactsButton.addEventListener("click", () => {
+//   playSound("savedFactsSound");
+// });
 
-likeFactButton.addEventListener("click", () => {
-  playSound("likeFactSound");
-});
+// likeFactButton.addEventListener("click", () => {
+//   playSound("likeFactSound");
+// });
+
+document.addEventListener("DOMContentLoaded", getRandomFacts); //Llamar a la funcion showRandomText cada vez que el evento cargar pagina se ejecute
 
 function showRandomText(apiRandomText) {
   console.log("showRandomText () >> OUTPUT >>");
   console.table(apiRandomText);
   let getRandomFactText = document.querySelector("#random-fact");
-  getRandomFactText.textContent=apiRandomText;
+  getRandomFactText.textContent = apiRandomText;
   console.log(getRandomFactText);
 }
 
