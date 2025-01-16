@@ -1,18 +1,14 @@
 import { getRandomFacts } from "./api.js";
 
-//Parameters
-let apiRandomText = "";
-
-// Elementos
+// Elementos de la página
 const musicOn = document.getElementById("music-on");
 const musicOff = document.getElementById("music-off");
 const backgroundMusic = document.getElementById("background-music");
 const clickSoundOn = document.getElementById("click-sound-on");
 const clickSoundOff = document.getElementById("click-sound-off");
-// Inicializar música
+
 let isMusicPlaying = false;
 
-// Función para poner música
 musicOn.addEventListener("click", () => {
   if (!isMusicPlaying) {
     backgroundMusic.play(); 
@@ -21,7 +17,6 @@ musicOn.addEventListener("click", () => {
   clickSoundOn.play();
 });
 
-// Función quitar música
 musicOff.addEventListener("click", () => {
   if (isMusicPlaying) {
     backgroundMusic.pause(); 
@@ -30,8 +25,6 @@ musicOff.addEventListener("click", () => {
   clickSoundOff.play(); 
 });
 
-
-// Función para reproducir sonido desde un elemento de audio en el HTML
 function playSound(audioId) {
   const audioElement = document.getElementById(audioId);
   if (audioElement) {
@@ -50,14 +43,36 @@ document.addEventListener("DOMContentLoaded", () => {
   likeFactButton.addEventListener("click", () => playSound("likeFactSound"));
 });
 
-document.addEventListener("DOMContentLoaded", getRandomFacts); //Llamar a la funcion showRandomText cada vez que el evento cargar pagina se ejecute
+document.addEventListener("DOMContentLoaded", getRandomFact); // Llamar a la función getRandomFact cuando se cargue la página
 
 function showRandomText(apiRandomText) {
-  console.log("showRandomText () >> OUTPUT >>");
+  console.log("showRandomText() >> OUTPUT >>");
   console.table(apiRandomText);
+
   let getRandomFactText = document.querySelector("#random-fact");
   getRandomFactText.textContent = apiRandomText;
   console.log(getRandomFactText);
+}
+
+function showErrorPopup() {
+  const popup = document.getElementById('error-popup');
+  popup.style.display = 'flex'; // Muestra el pop-up
+}
+
+function closeErrorPopup() {
+  const popup = document.getElementById('error-popup');
+  popup.style.display = 'none'; // Oculta el pop-up
+}
+
+// event click cerrar el pop-up
+document.getElementById('error-close').addEventListener('click', closeErrorPopup);
+
+async function getRandomFact() {
+  const fact = await getRandomFacts(); // Llamamos a la API
+
+  if (!fact) {
+    showErrorPopup(); // Si la API devuelve null (error), mostramos el pop-up
+  }
 }
 
 export { showRandomText };

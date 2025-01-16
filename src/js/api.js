@@ -1,5 +1,4 @@
 import { showRandomText } from "./dom.js";
-// !! ERROR - POR ALGUN MOTIVO NO SE PUEDE ACCEDER A ESTE ARCHIVO
 
 async function getRandomFacts() {
   const url = "https://uselessfacts.jsph.pl/api/v2/facts/random";
@@ -12,16 +11,14 @@ async function getRandomFacts() {
     const json = await response.json();
     console.table(json);
 
-    let curiousFactRandomId = json.id;
-    let curiousFactRandomText = json.text;
-    let curiousFactRandomSource = json.source;
-    let curiousFactRandomSourceUrl = json.source_url;
-    let curiousFactRandomLenguage = json.language;
-    let curiousFactRandomPermaLink = json.permalink;
+    let curiousFactRandomText = json.text; // Aquí obtenemos el texto del fact
 
+    // Mostrar el texto del "fact" en el DOM
     showRandomText(curiousFactRandomText);
   } catch (error) {
-    console.error(error.message);
+    console.error('An error ocurred, press the botton again', error.message);
+    return null; // null en caso de error
   }
 }
+
 export { getRandomFacts };
