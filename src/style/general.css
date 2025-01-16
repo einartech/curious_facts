@@ -8,10 +8,15 @@
   src: url("./fonts/DIEDIEDI.TTF");
 }
 
-.game-font{font-family: Retro Gaming;}
-.tama-font{font-family: DIEDIEDIE;}
+.game-font {
+  font-family: Retro Gaming;
+}
 
-*{
+.tama-font {
+  font-family: DIEDIEDIE;
+}
+
+* {
   margin: 0;
 }
 
@@ -22,7 +27,7 @@ html {
 }
 
 body {
-  background-image: url("./images/Background.png");
+  background-image: url("/src/assets/img/background.png");
   height: 100%;
   padding-top: 5%;
   padding-bottom: 5%;
@@ -52,7 +57,7 @@ footer {
   justify-content: center;
 }
 
-.icon{
+.icon {
   background-color: black;
   width: 25px;
   height: 25px;
