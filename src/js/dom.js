@@ -15,47 +15,40 @@ let isMusicPlaying = false;
 // Función para poner música
 musicOn.addEventListener("click", () => {
   if (!isMusicPlaying) {
-    backgroundMusic.play(); // Inicia la música
+    backgroundMusic.play(); 
     isMusicPlaying = true;
   }
-  clickSoundOn.play(); // Reproduce el sonido del botón
+  clickSoundOn.play();
 });
 
 // Función quitar música
 musicOff.addEventListener("click", () => {
   if (isMusicPlaying) {
-    backgroundMusic.pause(); // Pausar música
+    backgroundMusic.pause(); 
     isMusicPlaying = false;
   }
-  clickSoundOff.play(); // Reproduce el sonido del botón
+  clickSoundOff.play(); 
 });
 
-// Selecciona los botones
-const newFactButton = document.getElementById("newFact");
-const savedFactsButton = document.getElementById("savedFacts");
-const likeFactButton = document.getElementById("likeFact");
 
 // Función para reproducir sonido desde un elemento de audio en el HTML
 function playSound(audioId) {
   const audioElement = document.getElementById(audioId);
   if (audioElement) {
-    audioElement.currentTime = 0; // Reinicia el audio
+    audioElement.currentTime = 0; 
     audioElement.play();
   }
 }
 
-//Eventos click ratón botones
- newFactButton.addEventListener("click", () => {
-   playSound("newFactSound");
- });
+document.addEventListener("DOMContentLoaded", () => {
+  const newFactButton = document.getElementById("new-fact");
+  const savedFactsButton = document.getElementById("saved-facts");
+  const likeFactButton = document.getElementById("like-fact");
 
- savedFactsButton.addEventListener("click", () => {
-   playSound("savedFactsSound");
- });
-
- likeFactButton.addEventListener("click", () => {
-   playSound("likeFactSound");
- });
+  newFactButton.addEventListener("click", () => playSound("newFactSound"));
+  savedFactsButton.addEventListener("click", () => playSound("savedFactsSound"));
+  likeFactButton.addEventListener("click", () => playSound("likeFactSound"));
+});
 
 document.addEventListener("DOMContentLoaded", getRandomFacts); //Llamar a la funcion showRandomText cada vez que el evento cargar pagina se ejecute
 
