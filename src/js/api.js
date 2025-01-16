@@ -1,27 +1,64 @@
 import { showRandomText } from "./dom.js";
-// !! ERROR - POR ALGUN MOTIVO NO SE PUEDE ACCEDER A ESTE ARCHIVO
-
+/**
+ * Obtiene un hecho curioso aleatorio desde la API de "uselessfacts".
+ * Maneja errores de red y de análisis de JSON de manera robusta.
+ */
 async function getRandomFacts() {
   const url = "https://uselessfacts.jsph.pl/api/v2/facts/random";
+
   try {
+    // Realiza la solicitud a la API
     const response = await fetch(url);
+
+    // Verifica si la respuesta es exitosa
     if (!response.ok) {
-      throw new Error(`Response status: ${response.status}`);
+      throw new Error(
+        `Error al obtener datos: Status ${response.status}, StatusText: ${response.statusText}`
+        //?Preguntar a Alex
+      );
     }
 
+    // Intenta analizar el JSON
     const json = await response.json();
-    console.table(json);
 
-    let curiousFactRandomId = json.id;
-    let curiousFactRandomText = json.text;
-    let curiousFactRandomSource = json.source;
-    let curiousFactRandomSourceUrl = json.source_url;
-    let curiousFactRandomLenguage = json.language;
-    let curiousFactRandomPermaLink = json.permalink;
+    // Verifica que los datos esperados existan
+    const {
+      id: curiousFactRandomId,
+      text: curiousFactRandomText,
+      source: curiousFactRandomSource,
+      source_url: curiousFactRandomSourceUrl,
+      language: curiousFactRandomLanguage,
+      permalink: curiousFactRandomPermalink,
+    } = json;
 
-    showRandomText(curiousFactRandomText);
+    // Muestra el texto del hecho curioso en la interfaz
+    if (curiousFactRandomText) {
+      showRandomText(curiousFactRandomText);
+    } else {
+      throw new Error("El texto del hecho curioso no está disponible.");
+    }
+
+    // (Opcional) Puedes imprimir en consola otros detalles si es necesario
+    console.table({
+      curiousFactRandomId,
+      curiousFactRandomText,
+      curiousFactRandomSource,
+      curiousFactRandomSourceUrl,
+      curiousFactRandomLanguage,
+      curiousFactRandomPermalink,
+    });
   } catch (error) {
-    console.error(error.message);
+    // Maneja errores de red o análisis de JSON
+    console.error("Error al obtener o procesar datos:", error);
+
+    // Muestra un mensaje de alerta al usuario
+    alert(
+      `No se pudo cargar el hecho curioso desde ${url}.\n\nDetalles del error: ${error.message}`
+    );
+
+    // (Opcional) Log adicional si estás rastreando errores
+    console.warn("Stack trace:", error.stack);
   }
 }
+
 export { getRandomFacts };
