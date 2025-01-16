@@ -45,17 +45,17 @@ function playSound(audioId) {
 }
 
 //Eventos click ratón botones
-// newFactButton.addEventListener("click", () => {
-//   playSound("newFactSound");
-// });
+ newFactButton.addEventListener("click", () => {
+   playSound("newFactSound");
+ });
 
-// savedFactsButton.addEventListener("click", () => {
-//   playSound("savedFactsSound");
-// });
+ savedFactsButton.addEventListener("click", () => {
+   playSound("savedFactsSound");
+ });
 
-// likeFactButton.addEventListener("click", () => {
-//   playSound("likeFactSound");
-// });
+ likeFactButton.addEventListener("click", () => {
+   playSound("likeFactSound");
+ });
 
 document.addEventListener("DOMContentLoaded", getRandomFacts); //Llamar a la funcion showRandomText cada vez que el evento cargar pagina se ejecute
 
