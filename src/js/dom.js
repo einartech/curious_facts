@@ -1,14 +1,15 @@
+import { getRandomFacts } from "./api.js";
+
+//Parameters
+let apiRandomText = "";
+
 // Elementos
 const musicOn = document.getElementById("music-on");
 const musicOff = document.getElementById("music-off");
 const backgroundMusic = document.getElementById("background-music");
 const clickSoundOn = document.getElementById("click-sound-on");
 const clickSoundOff = document.getElementById("click-sound-off");
-
-// Listeners
-document.addEventListener("DOMContentLoaded", showRandomText); //Llamar a la funcion showRandomText cada vez que el evento cargar pagina se ejecute
-
-// Inicializar estado de la música
+// Inicializar música
 let isMusicPlaying = false;
 
 // Función para poner música
@@ -43,22 +44,27 @@ function playSound(audioId) {
   }
 }
 
-//Eventos clack ratón botones principales
-newFactButton.addEventListener("click", () => {
-  playSound("newFactSound");
-});
+//Eventos click ratón botones
+// newFactButton.addEventListener("click", () => {
+//   playSound("newFactSound");
+// });
 
-savedFactsButton.addEventListener("click", () => {
-  playSound("savedFactsSound");
-});
+// savedFactsButton.addEventListener("click", () => {
+//   playSound("savedFactsSound");
+// });
 
-likeFactButton.addEventListener("click", () => {
-  playSound("likeFactSound");
-});
+// likeFactButton.addEventListener("click", () => {
+//   playSound("likeFactSound");
+// });
+
+document.addEventListener("DOMContentLoaded", getRandomFacts); //Llamar a la funcion showRandomText cada vez que el evento cargar pagina se ejecute
 
 function showRandomText(apiRandomText) {
-  let getRandomText = document.querySelector("#random-fact"); //Traer la sección de HTML con id random-fact
-  getRandomText.textContent = apiRandomText; //Reasignar el valor de la variable getRandomText con los datos que provienen de la api
+  console.log("showRandomText () >> OUTPUT >>");
+  console.table(apiRandomText);
+  let getRandomFactText = document.querySelector("#random-fact");
+  getRandomFactText.textContent = apiRandomText;
+  console.log(getRandomFactText);
 }
 
 export { showRandomText };
