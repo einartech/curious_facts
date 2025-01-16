@@ -51,6 +51,7 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 document.addEventListener("DOMContentLoaded", getRandomFacts); //Llamar a la funcion showRandomText cada vez que el evento cargar pagina se ejecute
+document.addEventListener("click", getRandomFacts); //Llamar a la misma función al dar al botón New Fact
 
 function showRandomText(apiRandomText) {
   console.log("showRandomText () >> OUTPUT >>");
