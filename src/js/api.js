@@ -1,5 +1,4 @@
 import { showRandomText } from "./dom.js";
-// !! ERROR - POR ALGUN MOTIVO NO SE PUEDE ACCEDER A ESTE ARCHIVO
 
 async function getRandomFacts() {
   const url = "https://uselessfacts.jsph.pl/api/v2/facts/random";
@@ -10,7 +9,7 @@ async function getRandomFacts() {
     }
 
     const json = await response.json();
-    console.table(json);
+    // console.table(json);
 
     let curiousFactRandomId = json.id;
     let curiousFactRandomText = json.text;
