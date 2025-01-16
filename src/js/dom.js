@@ -39,7 +39,7 @@ function playSound(audioId) {
 document.addEventListener("DOMContentLoaded", () => {
   const newFactButton = document.getElementById("new-fact");
   const savedFactsButton = document.getElementById("saved-facts");
-  const likeFactButton = document.getElementById("like-fact");
+  const likeFactButton = document.getElementById("favorite-fact");
 
   newFactButton.addEventListener("click", () => playSound("newFactSound"));
   savedFactsButton.addEventListener("click", () =>

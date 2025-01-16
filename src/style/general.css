@@ -27,7 +27,7 @@ html {
 }
 
 body {
-  background-image: url("/curious_facts/src/assets/img/background.png");
+  background-image: url("/src/assets/img/background.png");
   height: 100%;
   padding-top: 5%;
   padding-bottom: 5%;
