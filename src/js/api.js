@@ -30,12 +30,20 @@ async function getRandomFacts() {
       language: curiousFactRandomLanguage,
       permalink: curiousFactRandomPermalink,
     } = json;
-
+    console.log(curiousFactRandomText);
+    console.log(curiousFactRandomId);
     // Muestra el texto del hecho curioso en la interfaz
-    if (curiousFactRandomText) {
+    if (typeof curiousFactRandomId === "number" && typeof curiousFactRandomText === "string") {
       showRandomText(curiousFactRandomText);
+      console.log(curiousFactRandomId);
+      console.log(curiousFactRandomText);
+
+      //localStorage.setItem(curiousFactRandomId, curiousFactRandomText);
+      console.table(localStorage);
     } else {
-      throw new Error("El texto del hecho curioso no está disponible.");
+      throw new Error(
+        "El texto y la id del hecho curioso no están disponibles."
+      );
     }
 
     // (Opcional) Puedes imprimir en consola otros detalles si es necesario
