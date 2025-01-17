@@ -57,27 +57,39 @@ document.addEventListener("DOMContentLoaded", getRandomFacts); //Llamar a la fun
 const newFactButton = document.getElementById("new-fact");
 newFactButton.addEventListener("click", () => getRandomFacts()); //Llamar a la misma función al dar al botón New Fact
 
-
-//Cuando yo aprieto el boton favoritos, este boton hace algo
-document.addEventListener("click", saveFavoriteFacts);
-
 //Funciones DOM
 function showRandomText(apiRandomText) {
   let getRandomFactText = document.querySelector("#random-fact");
   getRandomFactText.textContent = apiRandomText;
 }
-
-function saveFavoriteFacts() {
-  console.log("saveFavoriteFacts esta funcionando correctamente");
-
-  let favoriteFact = document.querySelector("#random-fact").textContent;
-
-  let myfavoriteFacts = new Array();
-  myfavoriteFacts = favoriteFact;
-
-  console.table(myfavoriteFacts);
+//Implementar almacenamiento en el navegador (localStorage) para los favoritos.
+function saveFavoriteFacts(curiousFactRandomId, curiousFactRandomText) {
+  localStorage.setItem(curiousFactRandomId, curiousFactRandomText);
+  console.log("TABLA DE FAVORITOS");
+  console.table(localStorage);
 }
 
+// POP UP info botón
+const gameInfoButton = document.getElementById("game-info");
+const popupContainer = document.getElementById("popup-container");
+const closePopupButton = document.getElementById("close-popup");
+
+
+gameInfoButton.addEventListener("click", () => {
+    popupContainer.classList.remove("hidden");
+   
+});
+
+
+closePopupButton.addEventListener("click", () => {
+    popupContainer.classList.add("hidden");
+    
+});
+
+document.addEventListener("DOMContentLoaded", () => {
+    popupContainer.classList.add("hidden");
+   
+});
 
 const elementToType = document.getElementById("random-fact")
 function typeWriterText(element, textToType, i = 0) {
@@ -90,7 +102,5 @@ function typeWriterText(element, textToType, i = 0) {
   setTimeout(() => typeWriterText(element, textToType, i + 1), timePerCharacter);
 }
 
+export { showRandomText, typeWriterText, saveFavoriteFacts };
 
-
-export { typeWriterText }
-export { showRandomText };
