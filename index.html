@@ -15,7 +15,8 @@
 
 <body>
     <header>
-        <span class="icon" id="game-info" alt="Game info button"></span>
+        <span class="icon" id="game-info">
+            <img src="./src/assets/img/game-info-button.png" alt="Game info button"></span>
         <h1 class="tama-font">CURIOUS FACTS</h1>
         <div id="popup-container" class="hidden">
             <div class="popup">
@@ -36,12 +37,15 @@
                 <p class="game-font" id="random-fact">RANDOM FACT</p>
             </div>
             <div class="icon-container">
-                <span class="icon" id="saved-facts" alt="View favourites button"><audio id="savedFactsSound"
-                        src="src/sounds/btn_heart.mp3"></audio></span>
-                <span class="icon" id="new-fact" alt="View new fun fact button"><audio id="newFactSound"
-                        src="src/sounds/btn_new_fact.mp3"></audio></span>
-                <span class="icon" id="favorite-fact" alt="Save to favourites button"><audio id="likeFactSound"
-                        src="src/sounds/btn_favorites.mp3"></audio></span>
+                <span class="icon" id="saved-facts">
+                    <img src="./src/assets/img/saved-facts-button.png" alt="View favourites button">
+                        <audio id="savedFactsSound" src="src/sounds/btn_heart.mp3"></audio></span>
+                <span class="icon" id="new-fact">
+                    <img src="./src/assets/img/new-fact-button.png" alt="View new fun fact button">
+                        <audio id="newFactSound" src="src/sounds/btn_new_fact.mp3"></audio></span>
+                <span class="icon" id="favorite-fact">
+                    <img src="./src/assets/img/fave-fact-button.png" alt="Save to favourites button">
+                        <audio id="likeFactSound"src="src/sounds/btn_favorites.mp3"></audio></span>
             </div>
         </div>
     </main>
@@ -49,10 +53,12 @@
     <footer>
         <div class="music-player-container">
             <audio id="background-music" src="src/sounds/btn_music.mp3" loop></audio>
-            <span class="icon" id="music-on" alt="Start music button"><audio id="click-sound-on"
-                    src="./src/sounds/btn_sound_start.mp3"></audio></span>
-            <span class="icon" id="music-off" alt="Pause music button"><audio id="click-sound-off"
-                    src="./src/sounds/btn_sound_stop.mp3"></audio></span>
+            <span class="icon" id="music-on">
+                <img src="./src/assets/img/music-on-button.png" alt="Start music button">
+                    <audio id="click-sound-on" src="./src/sounds/btn_sound_start.mp3"></audio></span>
+            <span class="icon" id="music-off">
+                <img src="./src/assets/img/music-off-button.png" alt="Pause music button">
+                    <audio id="click-sound-off" src="./src/sounds/btn_sound_stop.mp3"></audio></span>
         </div>
         <div class="power-container">
             <p class="game-font">Powered by: Kat, Einar, Guada y Carol</p>
