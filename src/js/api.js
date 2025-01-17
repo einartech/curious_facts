@@ -1,4 +1,5 @@
 import { showRandomText } from "./dom.js";
+import { typeWriterText } from "./dom.js"
 /**
  * Obtiene un hecho curioso aleatorio desde la API de "uselessfacts".
  * Maneja errores de red y de análisis de JSON de manera robusta.
@@ -34,6 +35,9 @@ async function getRandomFacts() {
     // Muestra el texto del hecho curioso en la interfaz
     if (curiousFactRandomText) {
       showRandomText(curiousFactRandomText);
+      const elementToType = document.getElementById("random-fact") // definir el texto a aplicar la función
+      elementToType.textContent = ""; // borrar hecho anterior
+      typeWriterText(elementToType, curiousFactRandomText); // teclear hecho nuevo
     } else {
       throw new Error("El texto del hecho curioso no está disponible.");
     }

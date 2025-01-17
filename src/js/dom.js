@@ -78,4 +78,19 @@ function saveFavoriteFacts() {
   console.table(myfavoriteFacts);
 }
 
+
+const elementToType = document.getElementById("random-fact")
+function typeWriterText(element, textToType, i = 0) {
+  const totalTime = 2000;  // 2000 is two seconds
+  const timePerCharacter = totalTime / textToType.length;
+  element.textContent += textToType[i];
+  if (i === textToType.length -1){
+    return;
+  }
+  setTimeout(() => typeWriterText(element, textToType, i + 1), timePerCharacter);
+}
+
+
+
+export { typeWriterText }
 export { showRandomText };
