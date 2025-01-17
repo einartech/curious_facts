@@ -13,7 +13,7 @@
     <title>Curious Facts</title>
 </head>
 
-<body>
+<body><div id="content-container">
     <div class="tama-icon" id="tama-heart-1"><img src="./src/assets/img/tamagotchi-heart.png" alt="Favourite Tamagotchi"></div>
     <div class="tama-icon" id="tama-normal-1"><img src="./src/assets/img/tamagotchi-normal.png" alt="Normal Tamagotchi"></div>
     <div class="tama-icon" id="tama-smile-1"><img src="./src/assets/img/tamagotchi-smile.png" alt="Smiley Tamagotchi"></div>
@@ -31,16 +31,6 @@
         <span class="icon" id="game-info">
             <img src="./src/assets/img/game-info-button.png" alt="Game info button"></span>
         <h1 class="tama-font">CURIOUS FACTS</h1>
-        <div id="popup-container" class="hidden">
-            <div class="popup">
-                <h2 class="game-font">How do I use Curious Facts?</h2>
-                <p class="game-font">1. Click on "New Fact" to get a random fun fact.</p>
-                <p class="game-font">2. Save your favorite facts using the "Save to Favorites" button.</p>
-                <p class="game-font">3. View your saved facts by clicking on the "View Favorites" button.</p>
-                <p class="game-font">4. Use the music buttons to play or pause the music.</p>
-                <button type="submit" id="close-popup" class="tama-font"> Got it!</button>
-            </div>
-        </div>
     </header>
 
     <main>
@@ -77,6 +67,18 @@
             <p class="game-font">Powered by: Kat, Einar, Guada y Carol</p>
         </div>
     </footer>
+    </div>
+
+    <div id="popup-container" class="hidden">
+        <div class="popup">
+            <h2 class="game-font">How do I use Curious Facts?</h2>
+            <p class="game-font">1. Click on "New Fact" to get a random fun fact.</p>
+            <p class="game-font">2. Save your favorite facts using the "Save to Favorites" button.</p>
+            <p class="game-font">3. View your saved facts by clicking on the "View Favorites" button.</p>
+            <p class="game-font">4. Use the music buttons to play or pause the music.</p>
+            <button type="submit" id="close-popup" class="tama-font"> Got it!</button>
+        </div>
+    </div>
 
     <script type="module" src="./src/js/api.js"></script>
     <script type="module" src="./src/js/dom.js"></script>
