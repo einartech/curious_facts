@@ -64,16 +64,12 @@ document.addEventListener("click", saveFavoriteFacts);
 function showRandomText(apiRandomText) {
   let getRandomFactText = document.querySelector("#random-fact");
   getRandomFactText.textContent = apiRandomText;
-  return apiRandomId;
 }
 //Implementar almacenamiento en el navegador (localStorage) para los favoritos.
-function saveFavoriteFacts() {
-  console.log("saveFavoriteFacts esta funcionando correctamente");
-
-  let favoriteFact = document.querySelector("#random-fact").textContent;
-
-  localStorage.saveItem("savedFavoriteFact", favoriteFact);
+function saveFavoriteFacts(curiousFactRandomId, curiousFactRandomText) {
+  localStorage.setItem(curiousFactRandomId, curiousFactRandomText);
+  console.log("TABLA DE FAVORITOS");
   console.table(localStorage);
 }
 
-export { showRandomText };
+export { showRandomText, saveFavoriteFacts };
