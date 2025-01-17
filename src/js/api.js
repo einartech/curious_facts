@@ -1,4 +1,4 @@
-import { showRandomText } from "./dom.js";
+import { showRandomText, saveFavoriteFacts } from "./dom.js";
 /**
  * Obtiene un hecho curioso aleatorio desde la API de "uselessfacts".
  * Maneja errores de red y de análisis de JSON de manera robusta.
@@ -32,21 +32,28 @@ async function getRandomFacts() {
     } = json;
 
     // Muestra el texto del hecho curioso en la interfaz
-    if (curiousFactRandomText) {
+
+    if (curiousFactRandomId && curiousFactRandomText) {
       showRandomText(curiousFactRandomText);
+
+      document.addEventListener("click", () =>
+        saveFavoriteFacts(curiousFactRandomId, curiousFactRandomText)
+      );
     } else {
-      throw new Error("El texto del hecho curioso no está disponible.");
+      throw new Error(
+        "El texto y la id del hecho curioso no están disponibles."
+      );
     }
 
     // (Opcional) Puedes imprimir en consola otros detalles si es necesario
-    console.table({
-      curiousFactRandomId,
-      curiousFactRandomText,
-      curiousFactRandomSource,
-      curiousFactRandomSourceUrl,
-      curiousFactRandomLanguage,
-      curiousFactRandomPermalink,
-    });
+    // console.table({
+    //   curiousFactRandomId,
+    //   curiousFactRandomText,
+    //   curiousFactRandomSource,
+    //   curiousFactRandomSourceUrl,
+    //   curiousFactRandomLanguage,
+    //   curiousFactRandomPermalink,
+    // });
   } catch (error) {
     // Maneja errores de red o análisis de JSON
     console.error("Error al obtener o procesar datos:", error);
