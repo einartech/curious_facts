@@ -7,29 +7,29 @@
     <link rel="stylesheet" href="./src/style/general.css">
     <link rel="stylesheet" href="./src/style/animations.css">
     <link rel="stylesheet" href="./src/style/header.css">
-    <link rel="stylesheet" href=".//src/style/main.css">
+    <link rel="stylesheet" href="./src/style/main.css">
     <link rel="stylesheet" href="./src/style/footer.css">
     <link rel="stylesheet" href="./src/style/media-queries.css">
     <title>Curious Facts</title>
 </head>
 
 <body>
-    <div class="tama-icon" id="tama-heart-1"><img src="./src/assets/img/tamagotchi-heart.png" alt="Favourite Tamagotchi"></div>
-    <div class="tama-icon" id="tama-normal-1"><img src="./src/assets/img/tamagotchi-normal.png" alt="Normal Tamagotchi"></div>
-    <div class="tama-icon" id="tama-smile-1"><img src="./src/assets/img/tamagotchi-smile.png" alt="Smiley Tamagotchi"></div>
-    <div class="tama-icon" id="tama-heart-2"><img src="./src/assets/img/tamagotchi-heart.png" alt="Favourite title="""></div>
-    <div class="tama-icon" id="tama-normal-2"><img src="./src/assets/img/tamagotchi-normal.png" alt="Normal Tamagotchi"></div>
-    <div class="tama-icon" id="tama-smile-2"><img src="./src/assets/img/tamagotchi-smile.png" alt="Smiley Tamagotchi"></div>
-    <div class="tama-icon" id="tama-heart-3"><img src="./src/assets/img/tamagotchi-heart.png" alt="Favourite Tamagotchi"></div>
-    <div class="tama-icon" id="tama-normal-3"><img src="./src/assets/img/tamagotchi-normal.png" alt="Normal Tamagotchi"></div>
-    <div class="tama-icon" id="tama-smile-3"><img src="./src/assets/img/tamagotchi-smile.png" alt="Smiley Tamagotchi"></div>
-    <div class="tama-icon" id="tama-heart-4"><img src="./src/assets/img/tamagotchi-heart.png" alt="Favourite Tamagotchi"></div>
-    <div class="tama-icon" id="tama-normal-4"><img src="./src/assets/img/tamagotchi-normal.png" alt="Normal Tamagotchi"></div>
-    <div class="tama-icon" id="tama-smile-4"><img src="./src/assets/img/tamagotchi-smile.png" alt="Smiley Tamagotchi"></div>
     <header>
-        <span class="icon" id="game-info" alt="Game info button"></span>
+        <span class="icon" id="game-info">
+            <img src="./src/assets/img/game-info-button.png" alt="Game info button"></span>
         <h1 class="tama-font">CURIOUS FACTS</h1>
+        <div id="popup-container" class="hidden">
+            <div class="popup">
+                <h2 class="game-font">How to use Curious Facts?</h2>
+                <p class="game-font">1. Click on "New Fact" to get a random fun fact.</p>
+                <p class="game-font">2. Save your favorite facts using the "Save to Favorites" button.</p>
+                <p class="game-font">3. View your saved facts by clicking on the "View Favorites" button.</p>
+                <p class="game-font">4. Use the music buttons to enable or disable the music.</p>
+                <button id="close-popup" class="tama-font">Got it!</button>
+            </div>
+        </div>
     </header>
+
     <main>
         <div class="image-container">
             <img src="./src/assets/img/tamagotchi.png" class="tama-image" alt="Large Tamagotchi">
@@ -37,30 +37,37 @@
                 <p class="game-font" id="random-fact">RANDOM FACT</p>
             </div>
             <div class="icon-container">
-                <span class="icon" id="saved-facts" alt="View favourites button"><audio id="savedFactsSound"
-                        src="src/sounds/btn_heart.mp3"></audio></span>
-                <span class="icon" id="new-fact" alt="View new fun fact button"><audio id="newFactSound"
-                        src="src/sounds/btn_new_fact.mp3"></audio></span>
-
-                <span class="icon" id="favorite-fact" alt="Save to favourites button"><audio id="likeFactSound"
-                        src="src/sounds/btn_favorites.mp3"></audio></span>
+                <span class="icon" id="saved-facts">
+                    <img src="./src/assets/img/saved-facts-button.png" alt="View favourites button">
+                        <audio id="savedFactsSound" src="src/sounds/btn_heart.mp3"></audio></span>
+                <span class="icon" id="new-fact">
+                    <img src="./src/assets/img/new-fact-button.png" alt="View new fun fact button">
+                        <audio id="newFactSound" src="src/sounds/btn_new_fact.mp3"></audio></span>
+                <span class="icon" id="favorite-fact">
+                    <img src="./src/assets/img/fave-fact-button.png" alt="Save to favourites button">
+                        <audio id="likeFactSound" src="src/sounds/btn_favorites.mp3"></audio></span>
             </div>
         </div>
     </main>
+
     <footer>
         <div class="music-player-container">
             <audio id="background-music" src="src/sounds/btn_music.mp3" loop></audio>
-            <span class="icon" id="music-on" alt="Start music button"><audio id="click-sound-on"
-                    src="./src/sounds/btn_sound_start.mp3"></audio></span>
-            <span class="icon" id="music-off" alt="Pause music button"><audio id="click-sound-off"
-                    src="./src/sounds/btn_sound_stop.mp3"></audio></span>
+            <span class="icon" id="music-on">
+                <img src="./src/assets/img/music-on-button.png" alt="Start music button">
+                    <audio id="click-sound-on" src="./src/sounds/btn_sound_start.mp3"></audio></span>
+            <span class="icon" id="music-off">
+                <img src="./src/assets/img/music-off-button.png" alt="Pause music button">
+                    <audio id="click-sound-off" src="./src/sounds/btn_sound_stop.mp3"></audio></span>
         </div>
         <div class="power-container">
             <p class="game-font">Powered by: Kat, Einar, Guada y Carol</p>
         </div>
     </footer>
+
     <script type="module" src="./src/js/api.js"></script>
     <script type="module" src="./src/js/dom.js"></script>
+    <script src="./src/js/popup.js"></script>
 </body>
 
 </html>
