@@ -53,6 +53,8 @@ document.addEventListener("DOMContentLoaded", () => {
 //Listeners
 //Cuando mi pagina web se carga, se visualizan los random facts
 document.addEventListener("DOMContentLoaded", getRandomFacts); //Llamar a la funcion showRandomText cada vez que el evento cargar pagina se ejecute
+// document.addEventListener("DOMContentLoaded", () => playSound("newFactSound")); //FactSound al cargar la página
+//DEJAR COMENTADO, MOLESTA MUCHO!!!!
 
 const newFactButton = document.getElementById("new-fact");
 newFactButton.addEventListener("click", () => getRandomFacts()); //Llamar a la misma función al dar al botón New Fact
