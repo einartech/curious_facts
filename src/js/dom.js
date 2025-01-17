@@ -57,9 +57,6 @@ document.addEventListener("DOMContentLoaded", getRandomFacts); //Llamar a la fun
 const newFactButton = document.getElementById("new-fact");
 newFactButton.addEventListener("click", () => getRandomFacts()); //Llamar a la misma función al dar al botón New Fact
 
-//Cuando yo aprieto el boton favoritos, este boton hace algo
-document.addEventListener("click", saveFavoriteFacts);
-
 //Funciones DOM
 function showRandomText(apiRandomText) {
   let getRandomFactText = document.querySelector("#random-fact");
