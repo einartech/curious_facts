@@ -104,3 +104,9 @@ function typeWriterText(element, textToType, i = 0) {
 
 export { showRandomText, typeWriterText, saveFavoriteFacts };
 
+//Ir a favoritos
+document.getElementById("saved-facts").addEventListener("click", () => {
+  window.location.href = "./saved-facts.html";
+});
+
+
