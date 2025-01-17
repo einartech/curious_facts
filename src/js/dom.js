@@ -79,3 +79,22 @@ function saveFavoriteFacts() {
 }
 
 export { showRandomText };
+
+// POP UP info botón
+const gameInfoButton = document.getElementById("game-info");
+const popupContainer = document.getElementById("popup-container");
+const closePopupButton = document.getElementById("close-popup");
+
+gameInfoButton.addEventListener("click", () => {
+    popupContainer.classList.remove("hidden");
+});
+
+
+closePopupButton.addEventListener("click", () => {
+    popupContainer.classList.add("hidden");
+});
+
+
+document.addEventListener("DOMContentLoaded", () => {
+    popupContainer.classList.add("hidden");
+});
