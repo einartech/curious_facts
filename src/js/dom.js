@@ -62,6 +62,7 @@ function showRandomText(apiRandomText) {
   let getRandomFactText = document.querySelector("#random-fact");
   getRandomFactText.textContent = apiRandomText;
 }
+
 //Implementar almacenamiento en el navegador (localStorage) para los favoritos.
 function saveFavoriteFacts(curiousFactRandomId, curiousFactRandomText) {
   localStorage.setItem(curiousFactRandomId, curiousFactRandomText);

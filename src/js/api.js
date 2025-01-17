@@ -37,10 +37,11 @@ async function getRandomFacts() {
     if (curiousFactRandomId && curiousFactRandomText) {
       showRandomText(curiousFactRandomText);
 
+
       document.addEventListener("click", () =>
         saveFavoriteFacts(curiousFactRandomId, curiousFactRandomText)
       );
-      const elementToType = document.getElementById("random-fact") // definir el texto a aplicar la función
+      const elementToType = document.getElementById("random-fact"); // definir el texto a aplicar la función
       elementToType.textContent = ""; // borrar hecho anterior
       typeWriterText(elementToType, curiousFactRandomText); // teclear hecho nuevo
     } else {
