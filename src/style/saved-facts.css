@@ -13,7 +13,7 @@ main {
     margin: 20px;
 }
 
-h4 {
+#saved-facts-list {
     list-style-type: none;
     padding: 0;
 }
@@ -34,10 +34,26 @@ button {
     color: #fff;
     border-radius: 5px;
     cursor: pointer;
-
 }
 
 button:hover {
+    background-color: #25d3f8;
+}
+
+.delete-button{
+    display: block;
+    margin: 15px auto 0 auto;
+    padding: 10px 20px;
+    border: none;
+    background-color: #c14a9e;
+    color: #fff;
+    border-radius: 5px;
+    cursor: pointer;
+    font-family: "DIEDIEDIE";
+    src: url("./fonts/DIEDIEDI.TTF");
+}
+
+.delete-button:hover {
     background-color: #25d3f8;
 }
 
