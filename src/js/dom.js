@@ -77,17 +77,19 @@ const closePopupButton = document.getElementById("close-popup");
 
 gameInfoButton.addEventListener("click", () => {
     popupContainer.classList.remove("hidden");
+    document.getElementById("content-container").classList.add("blur-background");
    
 });
 
 
 closePopupButton.addEventListener("click", () => {
     popupContainer.classList.add("hidden");
-    
+    document.getElementById("content-container").classList.remove("blur-background");
 });
 
 document.addEventListener("DOMContentLoaded", () => {
     popupContainer.classList.add("hidden");
+    
    
 });
 
