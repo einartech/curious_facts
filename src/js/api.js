@@ -38,10 +38,16 @@ async function getRandomFacts() {
       showRandomText(curiousFactRandomText);
 
 
-      document.addEventListener("click", () =>
-        saveFavoriteFacts(curiousFactRandomId, curiousFactRandomText)
-      );
-      const elementToType = document.getElementById("random-fact"); // definir el texto a aplicar la función
+      //CODIGO EXISTENTE
+      // // document.addEventListener("click", () =>
+      //   saveFavoriteFacts(curiousFactRandomId, curiousFactRandomText)
+      // );
+      //FAVES - CAMBIOS
+      const likeFactButton = document.getElementById("favorite-fact");
+      likeFactButton.addEventListener("click", () =>
+      saveFavoriteFacts(curiousFactRandomId, curiousFactRandomText))
+      //END FAVES
+      const elementToType = document.getElementById("random-fact") // definir el texto a aplicar la función
       elementToType.textContent = ""; // borrar hecho anterior
       typeWriterText(elementToType, curiousFactRandomText); // teclear hecho nuevo
     } else {
