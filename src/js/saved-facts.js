@@ -25,13 +25,13 @@ document.addEventListener("DOMContentLoaded", () => {
       deleteButton.textContent = "Delete fact";
       deleteButton.classList.add("delete-button");
 
-      //NEW BLOCK
-      deleteButton.addEventListener("click", () => {
-          // Mostrar el modal de confirmación
-          factToDelete = factId;
-          listItemToDelete = listItem;  
-          modal.classList.remove("hidden");  
-      });
+    //NEW BLOCK
+    deleteButton.addEventListener("click", () => {
+        // Mostrar el modal de confirmación
+        factToDelete = factId;
+        listItemToDelete = listItem;  
+        modal.classList.remove("hidden");  
+    });
 
       // Append the delete button to the list item (below the fact text)
       listItem.appendChild(deleteButton);

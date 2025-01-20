@@ -37,6 +37,7 @@ async function getRandomFacts() {
     if (curiousFactRandomId && curiousFactRandomText) {
       showRandomText(curiousFactRandomText);
 
+
       //CODIGO EXISTENTE
       // // document.addEventListener("click", () =>
       //   saveFavoriteFacts(curiousFactRandomId, curiousFactRandomText)
