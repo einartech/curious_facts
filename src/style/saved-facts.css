@@ -57,3 +57,11 @@ button:hover {
     background-color: #25d3f8;
 }
 
+ /* CSS Carol */
+.no-favorites-message {
+  display: none; /
+}
+
+/* #saved-facts-list {
+  display: none; 
+} */ 

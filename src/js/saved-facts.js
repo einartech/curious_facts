@@ -1,6 +1,7 @@
 document.addEventListener("DOMContentLoaded", () => {
     const savedFactsList = document.getElementById("saved-facts-list");
     const goBackButton = document.getElementById("go-back");
+    const noFavoritesMessage = document.getElementById("no-favorites-message");
   
     // Mostrar hechos guardados
     for (let i = 0; i < localStorage.length; i++) {
