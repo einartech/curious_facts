@@ -10,6 +10,16 @@
       align-items: center;
       margin: auto;
     }
+  
+  #game-info{
+      height: 20px;
+      width: same-as-height;
+  }
+  
+  #saved-facts{
+      height: 20px;
+      width: same-as-height;
+  }
 
     footer{
       background-color: transparent;
@@ -19,7 +29,7 @@
       font-size: 28pt;
     }
 
-    #game-text{
+    #game-font{
       font-size: 10px;
     }
 

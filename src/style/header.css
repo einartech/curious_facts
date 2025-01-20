@@ -2,7 +2,20 @@ h1{
     font-size: 48pt;
 }
 
+#header-icons-container{
+    float: right;
+    height: 85px;
+    width: 45px;
+    margin: auto 20px auto 0px;
+}
+
 #game-info{
+    float: right;
+    margin-right: 10px;
+    margin-top: 10px;
+}
+
+#saved-facts{
     float: right;
     margin-right: 10px;
     margin-top: 10px;
