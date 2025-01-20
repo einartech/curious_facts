@@ -1,12 +1,18 @@
 document.addEventListener("DOMContentLoaded", () => {
-    const savedFactsList = document.getElementById("saved-facts-list");
-    const goBackButton = document.getElementById("go-back");
-  
-    // Mostrar hechos guardados
-    for (let i = 0; i < localStorage.length; i++) {
+  const savedFactsList = document.getElementById("saved-facts-list");
+  const goBackButton = document.getElementById("go-back");
+  const modal = document.getElementById("confirmation-modal");
+  const confirmDeleteButton = document.getElementById("confirm-delete");
+  const cancelDeleteButton = document.getElementById("cancel-delete");
+
+  let factToDelete = null;
+  let listItemToDelete = null;  
+
+  // Mostrar hechos guardados
+  for (let i = 0; i < localStorage.length; i++) {
       const factId = localStorage.key(i);
       const factText = localStorage.getItem(factId);
-  
+
       const listItem = document.createElement("li");
       
       //NEW BLOCK
@@ -21,26 +27,40 @@ document.addEventListener("DOMContentLoaded", () => {
 
       //NEW BLOCK
       deleteButton.addEventListener("click", () => {
-        // Remove from localStorage
-        localStorage.removeItem(factId);
-        // Remove from the DOM
-        savedFactsList.removeChild(listItem);
+          // Mostrar el modal de confirmación
+          factToDelete = factId;
+          listItemToDelete = listItem;  
+          modal.classList.remove("hidden");  
       });
 
       // Append the delete button to the list item (below the fact text)
       listItem.appendChild(deleteButton);
-
-      // Append the list item to the saved facts list
+      
       savedFactsList.appendChild(listItem);
+  }
 
-      //GUADA
-      // listItem.textContent = factText;
-      // savedFactsList.appendChild(listItem);
-    }
-  
-    // Volver a main page
-    goBackButton.addEventListener("click", () => {
-      window.location.href = "./index.html";
-    });
+  // Confirmar borrado
+  confirmDeleteButton.addEventListener("click", () => {
+      if (factToDelete && listItemToDelete) {
+          // Eliminar del localStorage
+          localStorage.removeItem(factToDelete);
+          // Eliminar en el DOM
+          savedFactsList.removeChild(listItemToDelete);
+          factToDelete = null;
+          listItemToDelete = null;  
+      }
+      modal.classList.add("hidden"); 
   });
-  
+
+  // Cancelar el borrado
+  cancelDeleteButton.addEventListener("click", () => {
+      factToDelete = null;
+      listItemToDelete = null;  
+      modal.classList.add("hidden");  
+  });
+
+  // Volver a la página principal
+  goBackButton.addEventListener("click", () => {
+      window.location.href = "./index.html";
+  });
+});
