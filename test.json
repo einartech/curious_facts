@@ -1,0 +1,107 @@
+{
+    "tests": [
+      {
+        "description": "Debe obtener un hecho curioso válido",
+        "steps": [
+          {
+            "action": "callFunction",
+            "function": "getRandomFacts",
+            "args": []
+          },
+          {
+            "action": "assert",
+            "assertion": "elementExists",
+            "selector": "#random-fact"
+          },
+          {
+            "action": "assert",
+            "assertion": "elementTextLength",
+            "selector": "#random-fact",
+            "condition": "<=",
+            "value": 140
+          }
+        ]
+      },
+      {
+        "description": "Debe reproducir y pausar música correctamente",
+        "steps": [
+          {
+            "action": "click",
+            "selector": "#music-on"
+          },
+          {
+            "action": "assert",
+            "assertion": "audioPlaying",
+            "selector": "#background-music"
+          },
+          {
+            "action": "click",
+            "selector": "#music-off"
+          },
+          {
+            "action": "assert",
+            "assertion": "audioPaused",
+            "selector": "#background-music"
+          }
+        ]
+      },
+      {
+        "description": "Debe guardar un hecho curioso en localStorage",
+        "steps": [
+          {
+            "action": "callFunction",
+            "function": "saveFavoriteFacts",
+            "args": ["test-id", "Este es un hecho de prueba"]
+          },
+          {
+            "action": "assert",
+            "assertion": "localStorageItem",
+            "key": "test-id",
+            "value": "Este es un hecho de prueba"
+          }
+        ]
+      },
+      {
+        "description": "Debe mostrar información del juego correctamente",
+        "steps": [
+          {
+            "action": "click",
+            "selector": "#game-info"
+          },
+          {
+            "action": "assert",
+            "assertion": "classRemoved",
+            "selector": "#popup-container",
+            "className": "hidden"
+          },
+          {
+            "action": "click",
+            "selector": "#close-popup"
+          },
+          {
+            "action": "assert",
+            "assertion": "classAdded",
+            "selector": "#popup-container",
+            "className": "hidden"
+          }
+        ]
+      },
+      {
+        "description": "Debe simular el efecto de máquina de escribir",
+        "steps": [
+          {
+            "action": "callFunction",
+            "function": "typeWriterText",
+            "args": ["#random-fact", "Texto de prueba"]
+          },
+          {
+            "action": "assert",
+            "assertion": "elementText",
+            "selector": "#random-fact",
+            "value": "Texto de prueba"
+          }
+        ]
+      }
+    ]
+  }
+  
