@@ -33,10 +33,10 @@ img{
 }
 
 .icon-container {
-    height: 35px;
-    width: 150px;
+    height: 40px;
+    width: 160px;
     grid-column: 2 / 4;
-    grid-row: 6 / 7;
+    grid-row: 5/ 10;
     display: flex;
     justify-content: space-between;
     justify-self: center;
@@ -46,3 +46,12 @@ img{
     margin: auto;
     font-size: 18px;
 }
+
+#new-fact{
+    height: 60px;
+}
+
+#favorite-fact{
+    min-height: 60px;
+}
+  
