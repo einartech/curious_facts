@@ -1,0 +1,45 @@
+@media only screen and (max-width: 450px) {
+
+    body{
+      height: 100vh;
+    }
+
+    header {
+      width: 90%;
+      border-radius: 15%;
+      align-items: center;
+      margin: auto;
+    }
+  
+  #game-info{
+      height: 20px;
+      width: same-as-height;
+  }
+  
+  #saved-facts{
+      height: 20px;
+      width: same-as-height;
+  }
+
+    footer{
+      background-color: transparent;
+    }
+
+    h1{
+      font-size: 28pt;
+    }
+
+    #game-font{
+      font-size: 10px;
+    }
+
+    .icon-container{
+      grid-row: 5 / 7;
+    }
+  }
+
+  @media only screen and (max-width: 700px) {
+    .tama-icon{
+    display: none;
+    }
+  }

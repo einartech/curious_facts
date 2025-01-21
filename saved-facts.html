@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./src/style/general.css">
+    <link rel="stylesheet" href="./src/style/saved-facts.css">
+    <title>Saved Facts</title>
+</head>
+
+<body>
+    <header>
+        <h1 class="tama-font">Saved Facts</h1>
+        <button type="button" id="go-back" class="tama-font">Back</button>
+    </header>
+    <main>
+        <ul id="saved-facts-list" class="game-font"></ul>
+        <!-- Carol haciendo su humilde parte -->
+        <div class="no-favorites-message" id="favorites-container">
+            <p class="game-font" id="no-favorites-message">You don't have any random facts saved in your favorites</p>
+            <ul id="favorites-list"></ul>
+        </div>
+
+    </main>
+
+    <div id="confirmation-modal" class="modal hidden">
+        <div class="modal-content">
+            <p class="game-font">Are you sure you want to delete this fact?</p>
+            <button id="confirm-delete" class="tama-font">Yes</button>
+            <button id="cancel-delete" class="tama-font">No</button>
+        </div>
+    </div>
+
+    <script src="./src/js/saved-facts.js"></script>
+</body>
+
+</html>
