@@ -1,28 +1,17 @@
 import { showRandomText, saveFavoriteFacts, typeWriterText } from "./dom.js";
 
-/**
- * Obtiene un hecho curioso aleatorio desde la API de "uselessfacts".
- * Maneja errores de red y de análisis de JSON de manera robusta.
- */
 async function getRandomFacts() {
   const url = "https://uselessfacts.jsph.pl/api/v2/facts/random";
 
   try {
     while (true) {
-      //From API
       const response = await fetch(url);
-
-      //Check response OK
       if (!response.ok) {
         throw new Error(
           `Error al obtener datos: Status ${response.status}, StatusText: ${response.statusText}`
         );
       }
-
-      //JSON response
       const json = await response.json();
-
-      //Extract data
       const {
         id: curiousFactRandomId,
         text: curiousFactRandomText,
@@ -32,8 +21,7 @@ async function getRandomFacts() {
         permalink: curiousFactRandomPermalink,
       } = json;
 
-      // Too long
-      const maxLength = 140; // Max chars
+      const maxLength = 140;
       if (curiousFactRandomText && curiousFactRandomText.length <= maxLength) {
         showRandomText(curiousFactRandomText);
 
@@ -43,13 +31,12 @@ async function getRandomFacts() {
         );
 
         const elementToType = document.getElementById("random-fact");
-        elementToType.textContent = ""; //Clear old fact
+        elementToType.textContent = "";
         typeWriterText(elementToType, curiousFactRandomText);
-        break; //Break length loop
+        break;
       }
     }
   } catch (error) {
-    // Errors
     console.error("Error al obtener o procesar datos:", error);
     alert(
       `No se pudo cargar el hecho curioso desde ${url}.\n\nDetalles del error: ${error.message}`
@@ -57,6 +44,4 @@ async function getRandomFacts() {
     console.warn("Stack trace:", error.stack);
   }
 }
-
 export { getRandomFacts };
-
