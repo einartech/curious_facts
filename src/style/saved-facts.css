@@ -40,7 +40,7 @@ button:hover {
     background-color: #25d3f8;
 }
 
-.delete-button{
+.delete-button {
     display: block;
     margin: 15px auto 0 auto;
     padding: 10px 20px;
@@ -94,7 +94,13 @@ button:hover {
 
 .modal-button:hover {
     background-color: #25d3f8;
-} /* CSS Carol */
+}
+
+/* CSS Carol */
 .no-favorites-message {
-  display: none;
+    display: none;
+    justify-content: center;
+    margin-right: 4%;
+    background-color: #fff;
+    color: #c14a9e;
 }
